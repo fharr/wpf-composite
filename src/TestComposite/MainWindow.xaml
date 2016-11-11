@@ -8,17 +8,6 @@
         xmlns:u="clr-namespace:TestComposite.Utils"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Window.Resources>
-        <DataTemplate x:Key="TextParameterTemplate">
-            <c:TextParameterControl ParamName="{Binding Name}" Value="{Binding Value}" />
-        </DataTemplate>
-        <DataTemplate x:Key="ParameterListTemplate">
-            <c:ParameterListControl ParamName="{Binding Name}" Items="{Binding SubParameters}" />
-        </DataTemplate>
-        <u:ParameterTemplateSelector x:Key="ParameterSelector"
-            TextParameterTemplate="{StaticResource TextParameterTemplate}"
-            ParameterListTemplate="{StaticResource ParameterListTemplate}"/>
-    </Window.Resources>
-
-    <ItemsControl ItemsSource="{Binding Parameters}" ItemTemplateSelector="{StaticResource ParameterSelector}"></ItemsControl>
+    
+    <c:Parameter DataContext="{Binding List}"></c:Parameter>
 </Window>

@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="TestComposite.Controls.Parameter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestComposite.Controls"
+             xmlns:u="clr-namespace:TestComposite.Utils"
+             mc:Ignorable="d"
+             x:Name="parent"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="TextParameterTemplate">
+            <local:TextParameterControl ParamName="{Binding Name}" Value="{Binding Value}" />
+        </DataTemplate>
+        <DataTemplate x:Key="ParameterListTemplate">
+            <local:ParameterListControl ParamName="{Binding Name}" Items="{Binding SubParameters}" />
+        </DataTemplate>
+        <u:ParameterTemplateSelector x:Key="ParameterSelector"
+            TextParameterTemplate="{StaticResource TextParameterTemplate}"
+            ParameterListTemplate="{StaticResource ParameterListTemplate}"/>
+    </UserControl.Resources>
+    
+    <ContentControl DataContext="{Binding ElementName=parent}" Content="{Binding Path=DataContext}" ContentTemplateSelector="{StaticResource ParameterSelector}"></ContentControl>
+</UserControl>
