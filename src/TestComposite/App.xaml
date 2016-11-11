@@ -1,0 +1,10 @@
+﻿<Application x:Class="TestComposite.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TestComposite"
+              xmlns:u="clr-namespace:TestComposite.Utils"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <u:DebugConverter x:Key="DebugConverter"/>
+    </Application.Resources>
+</Application>
