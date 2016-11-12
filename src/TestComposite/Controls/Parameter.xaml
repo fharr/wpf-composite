@@ -20,5 +20,5 @@
             ParameterListTemplate="{StaticResource ParameterListTemplate}"/>
     </UserControl.Resources>
     
-    <ContentControl DataContext="{Binding ElementName=parent}" Content="{Binding Path=DataContext}" ContentTemplateSelector="{StaticResource ParameterSelector}"></ContentControl>
+    <ContentControl Content="{Binding Path=ViewModel, ElementName=parent}" ContentTemplateSelector="{StaticResource ParameterSelector}"></ContentControl>
 </UserControl>

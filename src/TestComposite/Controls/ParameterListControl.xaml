@@ -11,7 +11,7 @@
         <ItemsControl ItemsSource="{Binding Path=Items}" Margin="20,0,0,0">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <local:Parameter></local:Parameter>
+                    <local:Parameter ViewModel="{Binding}"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

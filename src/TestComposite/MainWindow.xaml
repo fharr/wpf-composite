@@ -9,5 +9,5 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     
-    <c:Parameter DataContext="{Binding List}"></c:Parameter>
+    <c:Parameter ViewModel="{Binding Parameter}"></c:Parameter>
 </Window>

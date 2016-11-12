@@ -16,6 +16,12 @@ namespace TestComposite.Utils
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
+            if (item == null)
+            {
+                // Default value or no value at all.
+                return null;
+            }
+
             if (item is TextParameter)
             {
                 return this.TextParameterTemplate;
